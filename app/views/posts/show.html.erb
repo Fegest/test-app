@@ -1,0 +1,25 @@
+<div style="width: 50%;margin: auto;margin-bottom: 42px;">
+		 	<div style="float: right; margin-right: 10px;text-align: right; background: #F2F2F2; border-top: 4px ridge #CEE3F6;border-left: 4px ridge #CEE3F6;border-right: 4px groove #CEE3F6;border-top-left-radius: 5px; border-top-right-radius: 5px;" ><%= link_to "Удалить", post_path(@post), method: :delete, data:{confirm: "Хотите удалить задачу?"} %></div>
+		 	<div style="float: right; margin-right: 10px;text-align: right; background: #F2F2F2; border-top: 4px ridge #CEE3F6;border-left: 4px ridge #CEE3F6;border-right: 4px groove #CEE3F6;border-top-left-radius: 5px; border-top-right-radius: 5px;" ><a href=""><%= link_to "Редактировать", edit_post_path(@post) %></a></div>
+	 	 </div>
+<div style="width: 50%;margin: auto;" >
+		 <div style="border: 4px ridge #CEE3F6;border-radius:10px">
+			<div style="width: 100%;background:#CEF6F5;display: table;">
+				<h5 style="float: left;padding-left:7%;width: 43%; ">Задача:</h5>
+				<h5 style="float: right;padding-right:7%;width: 43%;text-align: right; ">Исполнитель:</h5>
+				<div style="float: left;padding-left:7%;width: 43%; "><%= @post.title %></div>
+				<div style="float: right;padding-right:7%;width: 43%;text-align: right; ">Sameluk Bogdan</div>
+			</div>
+			<div style="width: 100%;background:#CEF6EC;display: table;" >
+				<div style="width: 100%;background:#CEF6EC;display: table;padding-top: 0.75%;">
+					<h6 style="float: left;padding-left:13%;width: 37%; ">Приоритет:</h6>
+					<h6 style="float: right;padding-right:13%;width: 37%;text-align: right; ">Срок оплаты:</h6>
+					<div style="float: left;padding-left:15%;width: 35%; "><%= @post.priorit %></div>
+					<div style="float: right;padding-right:15%;width: 35%;text-align: right; "><%= @post.pay_date %></div>
+				</div>
+
+					<h6 style=" text-align:center; ">Описание:</h6>
+					<div style="padding-left: 3% "><%= @post.body %></div>
+			</div>
+		</div>
+</div>

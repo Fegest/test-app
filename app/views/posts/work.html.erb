@@ -1,0 +1,22 @@
+<h1 style="text-align:center;">It`s work</h1>
+<div style="width: 50%;margin: auto;" >
+	 <hr>
+</div>
+
+</div>
+<% @post.each do |post| %>
+
+<div style="width: 50%;margin: auto;" >
+		 <div style="border: 4px ridge #CEE3F6;border-radius:10px">
+			<div style="width: 100%;background:#CEF6F5;display: table;">
+				<h5 style="float: left;padding-left:7%;width: 43%; ">Задача:</h5>
+				<h5 style="float: right;padding-right:7%;width: 43%;text-align: right; ">Исполнитель:</h5>
+				<div style="float: left;padding-left:7%;width: 43%; "><a href="<%= post.id %>"><%= post.title %></a></div>
+				<div style="float: right;padding-right:7%;width: 43%;text-align: right; ">Sameluk Bogdan</div>
+			</div>
+
+		</div>
+	<hr>
+</div>
+
+<% end %>

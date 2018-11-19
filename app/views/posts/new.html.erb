@@ -1,0 +1,33 @@
+<h1 style="text-align:center;">Создание задачи!</h1>
+<%= form_for :post, url: posts_path do |f| %>
+
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |msg| %>
+  <div style="width: 50%;margin: auto;" class="alert alert-danger"> <%= msg %> </div>
+  <% end %>
+<% end %>
+
+<div style="width: 50%;margin: auto;" >
+   <div style="border: 4px ridge #CEE3F6;border-radius:10px">
+    <div style="width: 100%;background:#CEF6F5;display: table;padding-bottom: 1%;padding-top: 1%">
+      <h5 style="float: left;padding-left:7%;width: 43%; ">Заголовок:</h5>
+      <h5 style="float: right;padding-right:7%;width: 43%;text-align: right; ">Исполнитель:</h5>
+      <div style="float: left;padding-left:7%;width: 43%; "><%= f.text_field(:title,{:class => 'form-control'})  %></div>
+      <div style="float: right;padding-right:7%;width: 43%;text-align: right; ">Sameluk Bogdan</div>
+    </div>
+    <div style="width: 100%;background:#CEF6EC;display: table;padding-top: 1%;" >
+      <div style="width: 100%;background:#CEF6EC;display: table;">
+        <h6 style="float: left;padding-left:13%;width: 37%; ">Приоритет:</h6>
+        <h6 style="float: right;padding-right:13%;width: 37%;text-align: right; ">Срок оплаты:</h6>
+        <div style="float: left;padding-left:10%;width: 35%; "><%= f.select :priorit, [["1 - very low", "1 - very low"], ["2 - low", "2 - low"], ["3 - standart", "3 - standart"], ["4 - high", "4 - high"] , ["5 - very high", "5 - very high"]], {}, {:class => 'form-control'}  %></div>
+        <div style="float: right;padding-right:10%;width: 35%;text-align: right; "><%= f.date_field(:pay_date, {:class => 'form-control'}) %></div>
+      </div>
+
+        <h5 style=" text-align:center; ">Описание:</h5>
+        <div style="width: 80%;margin:auto; "><%= f.text_area(:body, {:class => 'form-control'}) %></div>
+        <div style="padding-left: 3%;padding-top: 1.5%;padding-bottom: 1.5% "><%= f.submit({:class => 'btn btn-success'}) %></div>
+    </div>
+  </div>
+</div>
+
+<% end %>
